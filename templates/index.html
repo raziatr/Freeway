@@ -1,21 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parking Detection</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Parking Detection</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
+    <!-- Poppins font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-    <div class="container">
-        <h1>Parking Space Detection</h1>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="brand">
+        <div class="brand-text">
+          <span class="brand-title">Freeway</span>
+        </div>
+      </div>
+      <div class="navbar-tag">
+        <span class="dot"></span>
+        <span>LIVE</span>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Parking Space <span class="accent">Detection</span></h1>
+        <p class="hero-desc">
+          The free way to spot available parking spaces faster!
+        </p>
+      </section>
+
+      <section class="video-card">
+        <div class="video-header">
+          <h2>Live Detection Stream</h2>
+          <div class="legend">
+            <div class="legend-item">
+              <span class="legend-swatch green"></span>
+              <span>Empty Slot</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-swatch red"></span>
+              <span>Occupied Slot</span>
+            </div>
+          </div>
+        </div>
 
         <div class="video-container">
-            <img src="{{ url_for('video') }}" alt="Video Stream">
+          <img src="{{ url_for('video') }}" alt="Parking video stream" />
         </div>
-    </div>
 
-</body>
+        <div class="video-footer">
+          <span>Processed in real time using OpenCV + Flask</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2025 Group 4 · Computer Vision LC01</span>
+    </footer>
+  </body>
 </html>
